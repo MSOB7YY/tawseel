@@ -37,6 +37,8 @@ class TColors {
   static const Color card = Color.fromARGB(255, 252, 252, 252);
   static const Color bg = Color.fromARGB(255, 237, 237, 237);
   static const Color whiteText = Color.fromARGB(255, 244, 244, 244);
+  static const Color blackText = Color.fromARGB(255, 64, 64, 64);
+  static const Color handle = Color.fromARGB(255, 211, 211, 211);
 }
 
 /// Text Styles

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:tawseel/controllers/settings_controller.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/themes.dart';
-import 'package:tawseel/ui/pages/page1.dart';
+import 'package:tawseel/ui/pages/new_order_page.dart';
 
 void main() {
   runApp(const MyApp());

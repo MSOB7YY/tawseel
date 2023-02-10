@@ -6,12 +6,14 @@ class FilledButton extends StatelessWidget {
   final Color color;
   final String text;
   final double? width;
+  final Color? textColor;
   const FilledButton({
     super.key,
     this.onTap,
     this.color = TColors.main,
     this.text = '',
     this.width,
+    this.textColor,
   });
 
   @override
@@ -28,7 +30,7 @@ class FilledButton extends StatelessWidget {
           margin: const EdgeInsets.all(12.0),
           child: Text(
             text,
-            style: TText.displayMedium.copyWith(color: TColors.whiteText),
+            style: TText.displayMedium.copyWith(color: textColor ?? TColors.whiteText),
           ),
         ),
       ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/pages/widgets/filled_button.dart';
-import 'package:tawseel/ui/pages/widgets/textfield.dart';
+import 'package:tawseel/ui/bottomsheets/added_product.dart';
+import 'package:tawseel/ui/widgets/filled_button.dart';
+import 'package:tawseel/ui/widgets/textfield.dart';
 
 class NewOrderPage extends StatelessWidget {
   const NewOrderPage({super.key});
@@ -164,14 +165,13 @@ class NewOrderPage extends StatelessWidget {
                 ),
                 FilledButton(
                   color: TColors.success,
-                  onTap: () => null,
                   text: 'إضافة',
+                  onTap: () => showAddedProductSuccessfullyBottomSheet(),
                 ),
               ],
             ),
           ),
           Container(
-            // color: TColors.card,
             padding: const EdgeInsets.all(kPadding16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
