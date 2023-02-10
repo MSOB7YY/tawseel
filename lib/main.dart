@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:tawseel/controllers/settings_controller.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/themes.dart';

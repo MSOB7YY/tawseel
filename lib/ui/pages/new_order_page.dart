@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/bottomsheets/added_product.dart';
+import 'package:tawseel/ui/bottomsheets/verification_code.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
 import 'package:tawseel/ui/widgets/textfield.dart';
 
@@ -146,7 +148,7 @@ class NewOrderPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      onPressed: () => null,
+                      onPressed: () => showVerificationCodeBottomSheet(),
                     ),
                   ],
                 ),
