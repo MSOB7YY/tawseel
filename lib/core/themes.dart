@@ -132,15 +132,16 @@ class AppThemes extends GetxController {
         /// Large Fonts
         titleSmall: TextStyle(
           fontSize: 18.0,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w500,
         ),
         titleMedium: TextStyle(
-          fontSize: 19.0,
-          fontWeight: FontWeight.w700,
+          fontSize: 18.0,
+          fontWeight: FontWeight.w600,
         ),
+        // this is used by appbar title text
         titleLarge: TextStyle(
-          fontSize: 20.0,
-          fontWeight: FontWeight.w800,
+          fontSize: 19.0,
+          fontWeight: FontWeight.w600,
         ),
 
         /// Very Large Fonts

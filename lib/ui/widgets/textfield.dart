@@ -23,6 +23,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: kMargin12),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(kBorderRadius6)),
       child: TextField(
         onChanged: onChanged,
         controller: controller,
