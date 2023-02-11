@@ -127,7 +127,7 @@ void showVerificationCodeBottomSheet() {
             ),
             Padding(
               padding: const EdgeInsets.all(kPadding8),
-              child: FilledButton(
+              child: TawseelFilledButton(
                 text: 'إرسال الرمز',
                 onTap: () => null,
               ),

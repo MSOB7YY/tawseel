@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:tawseel/core/constants.dart';
 
-class CustomTextField extends StatelessWidget {
+class TawseelTextField extends StatelessWidget {
   final TextEditingController? controller;
   final void Function(String)? onChanged;
   final String? hintText;
   final String? suffixText;
   final IconData? suffixIcon;
   final IconData? prefixIcon;
-  const CustomTextField({
+  const TawseelTextField({
     super.key,
     this.hintText,
     this.suffixText,

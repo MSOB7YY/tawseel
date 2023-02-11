@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppThemes.inst.getAppTheme(TColors.mainDark, light: false),
       themeMode: Settings.inst.themeMode.value,
       // home: const ResetPasswordPage(),
-      home: TawseelScaffold(),
+      home: const TawseelScaffold(),
     );
   }
 }

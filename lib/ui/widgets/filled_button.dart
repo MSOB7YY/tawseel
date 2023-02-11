@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:tawseel/core/constants.dart';
 
-class FilledButton extends StatelessWidget {
+class TawseelFilledButton extends StatelessWidget {
   final void Function()? onTap;
   final Color color;
   final String text;
   final double? width;
   final Color? textColor;
-  const FilledButton({
+  const TawseelFilledButton({
     super.key,
     this.onTap,
     this.color = TColors.main,

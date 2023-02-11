@@ -23,7 +23,7 @@ class NewOrderPage extends StatelessWidget {
       actions: [
         IconButton(
           onPressed: () => null,
-          icon: const NotificationIcon(),
+          icon: const TawseelNotificationIcon(),
         ),
       ],
       body: ListView(
@@ -130,17 +130,17 @@ class NewOrderPage extends StatelessWidget {
                 const Divider(
                   color: TColors.bg,
                 ),
-                const CustomTextField(
+                const TawseelTextField(
                   hintText: 'اسم المنتج',
                 ),
-                const CustomTextField(
+                const TawseelTextField(
                   hintText: 'سعر المنتج',
                   suffixText: 'ج.م',
                 ),
                 const SizedBox(
                   height: kPadding16,
                 ),
-                FilledButton(
+                TawseelFilledButton(
                   color: TColors.success,
                   text: 'إضافة',
                   onTap: () => showAddedProductSuccessfullyBottomSheet(),
@@ -160,23 +160,23 @@ class NewOrderPage extends StatelessWidget {
                 const SizedBox(
                   height: kPadding8,
                 ),
-                const CustomTextField(
+                const TawseelTextField(
                   hintText: 'اسم العميل',
                 ),
-                const CustomTextField(
+                const TawseelTextField(
                   hintText: 'عنوان العميل',
                   suffixIcon: Icons.map,
                 ),
-                const CustomTextField(
+                const TawseelTextField(
                   hintText: 'رقم العميل',
                 ),
-                const CustomTextField(
+                const TawseelTextField(
                   hintText: 'تكلفة التوصيل',
                 ),
                 const SizedBox(
                   height: kPadding16,
                 ),
-                FilledButton(
+                TawseelFilledButton(
                   onTap: () => null,
                   text: 'إضافة',
                 ),

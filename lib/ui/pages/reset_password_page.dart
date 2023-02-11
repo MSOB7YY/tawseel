@@ -62,7 +62,7 @@ class ResetPasswordPage extends StatelessWidget {
                   Row(
                     children: [
                       const Expanded(
-                        child: CustomTextField(
+                        child: TawseelTextField(
                           hintText: 'رقم الهاتف',
                           prefixIcon: Icons.numbers,
                         ),
@@ -76,7 +76,7 @@ class ResetPasswordPage extends StatelessWidget {
                   const SizedBox(
                     height: kPadding24,
                   ),
-                  const FilledButton(
+                  const TawseelFilledButton(
                     text: 'إرسال',
                   ),
                   const SizedBox(

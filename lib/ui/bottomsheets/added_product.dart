@@ -52,7 +52,7 @@ void showAddedProductSuccessfullyBottomSheet() {
           const SizedBox(
             height: kPadding24,
           ),
-          FilledButton(
+          TawseelFilledButton(
             color: TColors.bg,
             text: 'حسنًا، فهمت',
             textColor: TText.displayMedium.color,

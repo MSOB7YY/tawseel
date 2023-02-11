@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/widgets/default_container.dart';
 
-class NotificationIcon extends StatelessWidget {
-  const NotificationIcon({super.key});
+class TawseelNotificationIcon extends StatelessWidget {
+  const TawseelNotificationIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
