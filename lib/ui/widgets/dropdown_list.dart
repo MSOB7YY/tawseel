@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tawseel/core/constants.dart';
 
-class CustomDropDownList extends StatefulWidget {
-  const CustomDropDownList({super.key});
+class TawseelDropDownList extends StatefulWidget {
+  const TawseelDropDownList({super.key});
 
   @override
-  State<CustomDropDownList> createState() => _CustomDropDownListState();
+  State<TawseelDropDownList> createState() => _TawseelDropDownListState();
 }
 
-class _CustomDropDownListState extends State<CustomDropDownList> {
+class _TawseelDropDownListState extends State<TawseelDropDownList> {
   String currentValue = '+20';
   // String currentCountry = 'EG';
   List<String> countriesList = <String>['EG', 'US', 'SA', 'SY']; // should be replaced with images

@@ -6,6 +6,7 @@ import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/themes.dart';
 import 'package:tawseel/ui/pages/new_order_page.dart';
 import 'package:tawseel/ui/pages/reset_password_page.dart';
+import 'package:tawseel/ui/widgets/default_scaffold.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppThemes.inst.getAppTheme(TColors.mainDark, light: false),
       themeMode: Settings.inst.themeMode.value,
       // home: const ResetPasswordPage(),
-      home: const NewOrderPage(),
+      home: TawseelScaffold(),
     );
   }
 }

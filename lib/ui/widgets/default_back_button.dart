@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tawseel/core/constants.dart';
 
-class DefaultBackButton extends StatelessWidget {
-  const DefaultBackButton({super.key});
+class TawseelBackButton extends StatelessWidget {
+  const TawseelBackButton({super.key});
 
   @override
   Widget build(BuildContext context) {

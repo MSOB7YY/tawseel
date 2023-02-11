@@ -14,8 +14,8 @@ class NewOrderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultScaffold(
-      leading: const DefaultBackButton(),
+    return TawseelScaffold(
+      leading: const TawseelBackButton(),
       title: Text(
         "طلب جد يد",
         style: TText.headlineMedium,

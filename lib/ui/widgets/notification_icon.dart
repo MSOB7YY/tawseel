@@ -8,7 +8,7 @@ class NotificationIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultContainer(
+    return TawseelContainer(
       child: Stack(
         children: [
           const Icon(Icons.notifications),

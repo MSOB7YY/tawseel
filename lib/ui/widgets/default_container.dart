@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tawseel/core/constants.dart';
 
-class DefaultContainer extends StatelessWidget {
+class TawseelContainer extends StatelessWidget {
   final Widget child;
   final double? width;
   final double? height;
-  const DefaultContainer({super.key, required this.child, this.width, this.height});
+  const TawseelContainer({super.key, required this.child, this.width, this.height});
 
   @override
   Widget build(BuildContext context) {
