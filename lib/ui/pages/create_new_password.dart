@@ -37,7 +37,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
               height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 80.0, right: 80.0),
+              padding: const EdgeInsets.only(left: kPadding80, right: kPadding80),
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
@@ -56,7 +56,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
               height: 25,
             ),
             const Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                 suffixIcon: Icons.lock_outline,
                 prefixIcon: Icons.remove_red_eye,
@@ -64,7 +64,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
               )
             ),
             const Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                   suffixIcon: Icons.lock_outline,
                   prefixIcon: Icons.remove_red_eye,
@@ -72,7 +72,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(kPadding8),
               child: Align(
                 alignment: Alignment.center,
                 child: TawseelFilledButton(

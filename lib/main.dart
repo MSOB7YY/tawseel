@@ -10,6 +10,7 @@ import 'package:tawseel/ui/widgets/default_scaffold.dart';
 
 import 'ui/pages/Change_password.dart';
 import 'ui/pages/create_new_password.dart';
+import 'ui/pages/new_login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppThemes.inst.getAppTheme(TColors.mainDark, light: false),
       themeMode: Settings.inst.themeMode.value,
       // home: const ResetPasswordPage(),
-      home: const ChangePassword(),
+      home: const NewLogin(),
     );
   }
 }

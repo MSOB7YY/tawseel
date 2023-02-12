@@ -22,7 +22,7 @@ class _ChangePasswordState extends State<ChangePassword> {
         "تغيير الرقم السري",
         style: TText.titleMedium.copyWith(color: TColors.blackText),
       ),
-      leading: TawseelBackButton(),
+      leading: const TawseelBackButton(),
       body: Align(
         alignment: Alignment.topRight,
         child: TawseelContainer(
@@ -35,7 +35,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 style: TText.titleMedium.copyWith(color: TColors.blackText),
                 textDirection: TextDirection.rtl,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(kPadding8),
                 child: TawseelTextField(
                   suffixIcon: Icons.remove_red_eye,
@@ -48,7 +48,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 style: TText.titleMedium.copyWith(color: TColors.blackText),
                 textDirection: TextDirection.rtl,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(kPadding8),
                 child: TawseelTextField(
                   suffixIcon: Icons.remove_red_eye,
@@ -61,7 +61,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 style: TText.titleMedium.copyWith(color: TColors.blackText),
                 textDirection: TextDirection.rtl,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(kPadding8),
                 child: TawseelTextField(
                   suffixIcon: Icons.remove_red_eye,
@@ -69,7 +69,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                   obsecureText: true,
                 ),
               ),
-              TawseelFilledButton(
+              const TawseelFilledButton(
                 text: "حفظ التغييرات",
                 color: TColors.success,
               )
