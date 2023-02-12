@@ -65,7 +65,7 @@ void showVerificationCodeBottomSheet() {
                 listenForMultipleSmsOnAndroid: true,
                 defaultPinTheme: defaultPinTheme,
                 validator: (value) {
-                  return value == '2222' ? null : 'Pin is incorrect';
+                  return value == '2222' ? null : 'الكود غير صحيح';
                 },
                 hapticFeedbackType: HapticFeedbackType.lightImpact,
                 onCompleted: (pin) {
