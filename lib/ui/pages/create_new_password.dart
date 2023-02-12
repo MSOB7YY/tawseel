@@ -105,7 +105,6 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
           ],
         ),
       ),
-
     );
   }
 }
