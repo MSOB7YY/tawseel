@@ -9,6 +9,8 @@ class TawseelTextField extends StatelessWidget {
   final String? suffixText;
   final IconData? suffixIcon;
   final IconData? prefixIcon;
+  final bool? obsecureText;
+  final TextInputType? inputType;
   const TawseelTextField({
     super.key,
     this.hintText,
@@ -17,6 +19,8 @@ class TawseelTextField extends StatelessWidget {
     this.prefixIcon,
     this.controller,
     this.onChanged,
+    this.obsecureText,
+    this.inputType,
   });
 
   @override
@@ -25,6 +29,8 @@ class TawseelTextField extends StatelessWidget {
       margin: const EdgeInsets.only(top: kMargin12),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(kBorderRadius6)),
       child: TextField(
+        obscureText: obsecureText!,
+        keyboardType: inputType,
         onChanged: onChanged,
         controller: controller,
         style: TText.displaySmall,

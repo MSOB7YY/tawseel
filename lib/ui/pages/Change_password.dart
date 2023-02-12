@@ -3,6 +3,7 @@ import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/widgets/default_back_button.dart';
 import 'package:tawseel/ui/widgets/default_container.dart';
 import 'package:tawseel/ui/widgets/default_scaffold.dart';
+import 'package:tawseel/ui/widgets/filled_button.dart';
 
 import '../widgets/textfield.dart';
 
@@ -35,11 +36,43 @@ class _ChangePasswordState extends State<ChangePassword> {
                 textDirection: TextDirection.rtl,
               ),
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(kPadding8),
                 child: TawseelTextField(
                   suffixIcon: Icons.remove_red_eye,
+                  inputType: TextInputType.visiblePassword,
+                   obsecureText: true,
                 ),
               ),
+              Text(
+                "الرقم السرى الجديد",
+                style: TText.titleMedium.copyWith(color: TColors.blackText),
+                textDirection: TextDirection.rtl,
+              ),
+              Padding(
+                padding: EdgeInsets.all(kPadding8),
+                child: TawseelTextField(
+                  suffixIcon: Icons.remove_red_eye,
+                  inputType: TextInputType.visiblePassword,
+                  obsecureText: true,
+                ),
+              ),
+              Text(
+                "تأكيد الرقم السرى الجديد",
+                style: TText.titleMedium.copyWith(color: TColors.blackText),
+                textDirection: TextDirection.rtl,
+              ),
+              Padding(
+                padding: EdgeInsets.all(kPadding8),
+                child: TawseelTextField(
+                  suffixIcon: Icons.remove_red_eye,
+                  inputType: TextInputType.visiblePassword,
+                  obsecureText: true,
+                ),
+              ),
+              TawseelFilledButton(
+                text: "حفظ التغييرات",
+                color: TColors.success,
+              )
             ],
           ),
         ),
