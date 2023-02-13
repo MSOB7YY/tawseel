@@ -8,6 +8,7 @@ class TawseelFilledButton extends StatelessWidget {
   final String text;
   final double? width;
   final Color? textColor;
+  final EdgeInsetsGeometry? margin;
   const TawseelFilledButton({
     super.key,
     this.onTap,
@@ -15,6 +16,7 @@ class TawseelFilledButton extends StatelessWidget {
     this.text = '',
     this.width,
     this.textColor,
+    this.margin,
   });
 
   @override
@@ -28,7 +30,7 @@ class TawseelFilledButton extends StatelessWidget {
         child: Container(
           width: width ?? double.infinity,
           alignment: Alignment.center,
-          margin: const EdgeInsets.all(12.0),
+          margin: margin ?? const EdgeInsets.all(12.0),
           child: Text(
             text,
             style: TText.displayMedium.copyWith(color: textColor ?? TColors.whiteText),

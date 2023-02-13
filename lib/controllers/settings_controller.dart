@@ -6,7 +6,7 @@ import 'package:enum_to_string/enum_to_string.dart';
 class Settings extends GetxController {
   static Settings inst = Settings();
 
-  Rx<ThemeMode> themeMode = ThemeMode.system.obs;
+  Rx<ThemeMode> themeMode = ThemeMode.light.obs;
   RxDouble borderRadiusMultiplier = 1.0.obs;
 
   Settings() {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tawseel/core/constants.dart';
 
 import 'package:tawseel/core/extensions.dart';
 
@@ -8,7 +9,7 @@ class AppThemes extends GetxController {
 
   ThemeData getAppTheme(Color color, {bool light = true}) {
     return ThemeData(
-      brightness: !light ? Brightness.light : Brightness.dark,
+      brightness: light ? Brightness.light : Brightness.dark,
       useMaterial3: true,
       colorSchemeSeed: color,
       fontFamily: "Cairo",
@@ -31,11 +32,12 @@ class AppThemes extends GetxController {
       iconTheme: IconThemeData(
         color: light ? const Color.fromARGB(200, 40, 40, 40) : const Color.fromARGB(200, 233, 233, 233),
       ),
-      shadowColor: light ? const Color.fromARGB(180, 100, 100, 100) : const Color.fromARGB(222, 10, 10, 10),
-      dividerTheme: const DividerThemeData(
-        thickness: 2,
+      shadowColor: light ? const Color.fromARGB(40, 140, 140, 140) : const Color.fromARGB(222, 10, 10, 10),
+      dividerTheme: DividerThemeData(
+        thickness: 1.5,
         indent: 0.0,
         endIndent: 0.0,
+        color: TColors.handle.withAlpha(100),
       ),
       selectedRowColor: const Color.fromARGB(150, 80, 80, 80),
       dialogTheme: DialogTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0.multipliedRadius))),

@@ -12,13 +12,16 @@ class TawseelNotificationIcon extends StatelessWidget {
       child: Stack(
         children: [
           const Icon(Icons.notifications),
-          Container(
-            width: 10.0,
-            height: 10.0,
-            decoration: BoxDecoration(
-              color: TColors.main,
-              border: Border.all(color: TColors.card, width: 1.5),
-              borderRadius: BorderRadius.circular(kBorderRadius24),
+          InkWell(
+            onTap: () => null,
+            child: Container(
+              width: 10.0,
+              height: 10.0,
+              decoration: BoxDecoration(
+                color: TColors.main,
+                border: Border.all(color: TColors.card, width: 1.5),
+                borderRadius: BorderRadius.circular(kBorderRadius24),
+              ),
             ),
           ),
         ],

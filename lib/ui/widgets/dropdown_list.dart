@@ -24,14 +24,16 @@ class _TawseelDropDownListState extends State<TawseelDropDownList> {
         child: DropdownButton<String>(
           borderRadius: BorderRadius.circular(kBorderRadius6),
           value: currentValue,
-          icon: Row(
-            children: [
-              const SizedBox(
-                width: 2.0,
-              ),
-              Text(countriesList.elementAt(0)),
-              const Icon(Icons.arrow_drop_down_rounded)
-            ],
+          icon: FittedBox(
+            child: Row(
+              children: [
+                const SizedBox(
+                  width: 2.0,
+                ),
+                Text(countriesList.elementAt(0)),
+                const Icon(Icons.arrow_drop_down_rounded)
+              ],
+            ),
           ),
           items: <String>['+20', '+15', '+1', '+99'].map((String value) {
             return DropdownMenuItem<String>(
