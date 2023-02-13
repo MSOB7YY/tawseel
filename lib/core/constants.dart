@@ -8,6 +8,7 @@ const double kPadding12 = 12.0;
 const double kPadding16 = 16.0;
 const double kPadding20 = 20.0;
 const double kPadding24 = 24.0;
+const double kPadding80 = 80.0;
 
 /// Border Radius
 const double kBorderRadius4 = 4.0;
@@ -25,6 +26,7 @@ const double kMargin12 = 12.0;
 const double kMargin16 = 16.0;
 const double kMargin20 = 20.0;
 const double kMargin24 = 24.0;
+
 
 /// Colors
 class TColors {
