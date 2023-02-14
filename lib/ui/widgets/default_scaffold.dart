@@ -9,7 +9,8 @@ class TawseelScaffold extends StatefulWidget {
   final Widget? leading;
   final Widget? title;
   final List<Widget>? actions;
-  const TawseelScaffold({super.key, this.body, this.leading, this.title, this.actions});
+  final Color? backgroundColor;
+  const TawseelScaffold({super.key, this.body, this.leading, this.title, this.actions,this.backgroundColor});
 
   @override
   State<TawseelScaffold> createState() => _TawseelScaffoldState();

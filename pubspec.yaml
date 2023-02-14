@@ -92,3 +92,6 @@ flutter:
         - asset: assets/fonts/Cairo-ExtraLight.ttf
   assets:
       - assets/images/lock.png
+      - assets/images/chicken.jpg
+      - assets/images/background.png
+      - assets/images/Tawsel.png
