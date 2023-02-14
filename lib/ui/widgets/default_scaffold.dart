@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/ui/pages/home_page.dart';
 import 'package:tawseel/ui/pages/new_order_page.dart';
 import 'package:tawseel/ui/pages/reset_password_page.dart';
 
@@ -8,9 +9,12 @@ class TawseelScaffold extends StatefulWidget {
   final Widget? body;
   final Widget? leading;
   final Widget? title;
+  final double? titleSpacing;
+  final double? toolbarHeight;
   final List<Widget>? actions;
   final Color? backgroundColor;
-  const TawseelScaffold({super.key, this.body, this.leading, this.title, this.actions,this.backgroundColor});
+  const TawseelScaffold({super.key, this.body, this.leading, this.title, this.actions,this.backgroundColor, this.titleSpacing, this.toolbarHeight});
+
 
   @override
   State<TawseelScaffold> createState() => _TawseelScaffoldState();
@@ -19,19 +23,34 @@ class TawseelScaffold extends StatefulWidget {
 class _TawseelScaffoldState extends State<TawseelScaffold> {
   final PageController _pageController = PageController(initialPage: 0);
 
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: TColors.bg,
-      appBar: AppBar(
-        titleSpacing: 0,
-        backgroundColor: TColors.bg,
-        leading: widget.leading,
-        title: widget.title,
-        actions: widget.actions,
-      ),
+      appBar: widget.body == null
+          ? null
+          : AppBar(
+              toolbarHeight: widget.toolbarHeight,
+              leadingWidth: kMargin24 * 3,
+              titleSpacing: widget.titleSpacing ?? 0.0,
+              backgroundColor: TColors.bg,
+              leading: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: kPadding8),
+                child: widget.leading,
+              ),
+              title: widget.title,
+              actions: widget.actions != null
+                  ? [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: widget.actions!,
+                      ),
+                      const SizedBox(width: kMargin8),
+                    ]
+                  : null,
+            ),
       body: widget.body ??
           PageView(
             controller: _pageController,
@@ -41,8 +60,9 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               });
             },
             children: const [
-              ResetPasswordPage(),
               NewOrderPage(),
+              ResetPasswordPage(),
+              Homepage(),
             ],
           ),
       bottomNavigationBar: widget.body != null
@@ -56,6 +76,10 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               showUnselectedLabels: false,
               currentIndex: _selectedIndex,
               items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.new_label),
+                  label: '',
+                ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.add_circle),
                   label: '',
