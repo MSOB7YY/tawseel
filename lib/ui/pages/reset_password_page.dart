@@ -25,7 +25,6 @@ class ResetPasswordPage extends StatelessWidget {
         "استرجاع كلمة المرور",
       ),
       body: CustomScrollView(
-        //Instead of ListView or SingleChildScrollView put CustomScrollVIew to use Expanded or spacer
         slivers: [
           SliverFillRemaining(
             hasScrollBody: false,

@@ -9,7 +9,7 @@ class TawseelTextField extends StatelessWidget {
   final String? suffixText;
   final IconData? suffixIcon;
   final IconData? prefixIcon;
-  final bool? obsecureText;
+  final bool obsecureText;
   final TextInputType? inputType;
   const TawseelTextField({
     super.key,
@@ -19,7 +19,7 @@ class TawseelTextField extends StatelessWidget {
     this.prefixIcon,
     this.controller,
     this.onChanged,
-    this.obsecureText,
+    this.obsecureText = false,
     this.inputType,
   });
 
@@ -29,7 +29,7 @@ class TawseelTextField extends StatelessWidget {
       margin: const EdgeInsets.only(top: kMargin12),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(kBorderRadius6)),
       child: TextField(
-        obscureText: obsecureText!,
+        obscureText: obsecureText,
         keyboardType: inputType,
         onChanged: onChanged,
         controller: controller,

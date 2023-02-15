@@ -4,18 +4,14 @@ import 'package:tawseel/class/order.dart';
 
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/enums.dart';
-import 'package:tawseel/ui/bottomsheets/added_product.dart';
-import 'package:tawseel/ui/bottomsheets/verification_code.dart';
-import 'package:tawseel/ui/widgets/default_back_button.dart';
 import 'package:tawseel/ui/widgets/default_container.dart';
 import 'package:tawseel/ui/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
 import 'package:tawseel/ui/widgets/notification_icon.dart';
 import 'package:tawseel/ui/widgets/order_box.dart';
-import 'package:tawseel/ui/widgets/textfield.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class CurrentOrdersPage extends StatelessWidget {
+  const CurrentOrdersPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,38 +42,34 @@ class Homepage extends StatelessWidget {
       body: ListView(
         children: [
           const SizedBox(height: kPadding16),
-          TawseelContainer(
-            margin: const EdgeInsets.all(kMargin16),
-            padding: const EdgeInsets.all(kPadding12),
-            enableShadow: true,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
               children: [
-                Expanded(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'استلم فلوسك\nوالتوصيل علينا',
-                        style: TText.displayLarge.copyWith(height: 1.6),
-                      ),
-                      const SizedBox(height: kPadding16),
-                      TawseelFilledButton(
-                        text: 'اطلب دلوقتي',
-                        onTap: () => null,
-                      ),
-                    ],
-                  ),
+                const SizedBox(width: kPadding16),
+                TawseelFilledButton(
+                  width: Get.width / 3,
+                  text: 'كل الطلبات',
                 ),
-                const SizedBox(width: kPadding12),
-                Image.asset(
-                  'assets/images/homepage_man.png',
-                  width: Get.width / 2,
+                const SizedBox(width: kPadding16),
+                TawseelFilledButton(
+                  width: Get.width / 3,
+                  text: 'الطلبات الحالية',
+                  color: TColors.handle,
+                  textColor: TColors.blackText,
                 ),
+                const SizedBox(width: kPadding16),
+                TawseelFilledButton(
+                  width: Get.width / 3,
+                  text: 'قيد التوصيل',
+                  color: TColors.handle,
+                  textColor: TColors.blackText,
+                ),
+                const SizedBox(width: kPadding16),
               ],
             ),
           ),
+          const SizedBox(height: kPadding16),
           Container(
             decoration: BoxDecoration(
               color: TColors.card.withAlpha(222),
@@ -97,6 +89,12 @@ class Homepage extends StatelessWidget {
                 ),
                 TawseelOrderBox(
                   order: Order(OrderState.onTheWay, 25613, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 40),
+                ),
+                TawseelOrderBox(
+                  order: Order(OrderState.delivered, 25213, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 32),
+                ),
+                TawseelOrderBox(
+                  order: Order(OrderState.canceled, 25213, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 26),
                 ),
               ],
             ),
