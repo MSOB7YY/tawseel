@@ -4,6 +4,7 @@ import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/pages/current_orders.dart';
 import 'package:tawseel/ui/pages/home_page.dart';
 import 'package:tawseel/ui/pages/new_order_page.dart';
+import 'package:tawseel/ui/pages/profile_page.dart';
 import 'package:tawseel/ui/pages/reset_password_page.dart';
 
 /// only wraps content in an appbar and background with colors
@@ -13,10 +14,10 @@ class TawseelScaffold extends StatefulWidget {
   final Widget? title;
   final double? titleSpacing;
   final double? toolbarHeight;
+  final double? leadingWidth;
   final List<Widget>? actions;
   final Color? backgroundColor;
-  const TawseelScaffold({super.key, this.body, this.leading, this.title, this.actions,this.backgroundColor, this.titleSpacing, this.toolbarHeight});
-
+  const TawseelScaffold({super.key, this.body, this.leading, this.title, this.actions, this.backgroundColor, this.titleSpacing, this.toolbarHeight, this.leadingWidth});
 
   @override
   State<TawseelScaffold> createState() => _TawseelScaffoldState();
@@ -35,7 +36,7 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
           ? null
           : AppBar(
               toolbarHeight: widget.toolbarHeight,
-              leadingWidth: kMargin24 * 3,
+              leadingWidth: widget.leadingWidth ?? kMargin24 * 3,
               titleSpacing: widget.titleSpacing ?? 0.0,
               backgroundColor: TColors.bg,
               leading: Padding(
@@ -62,7 +63,7 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               });
             },
             children: const [
-              ResetPasswordPage(),
+              ProfilePage(),
               NewOrderPage(),
               CurrentOrdersPage(),
               Homepage(),
