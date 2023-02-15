@@ -16,12 +16,12 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
   @override
   Widget build(BuildContext context) {
     return TawseelScaffold(
-       title: Align(
-        alignment: Alignment.centerRight,
-        child: Text("انشاء كلمة مرور جديدة",
+      title: Align(
+          alignment: Alignment.centerRight,
+          child: Text(
+            "انشاء كلمة مرور جديدة",
             style: TText.titleLarge,
-        )
-       ),
+          )),
       leading: const TawseelBackButton(),
       body: SingleChildScrollView(
         child: Column(
@@ -36,39 +36,47 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
             const SizedBox(
               height: 50,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: kPadding80, right: kPadding80),
+            Align(
               child: Container(
+                padding: const EdgeInsets.all(kPadding16),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(width: 0.5)),
-                child: Center(
-                  child: Image.asset(
-                    "assets/images/lock.png",
-                    width: 200,
-                    height: 200,
-                    fit: BoxFit.cover,
-                  ),
+                  color: TColors.card,
+                  border: Border.all(width: 1.2, color: TColors.handle),
+                  borderRadius: BorderRadius.circular(kBorderRadius20),
+                ),
+                child: Image.asset(
+                  "assets/images/lock_pass.png",
+                  // width: 200,
+                  // height: 200,
+                  // fit: BoxFit.cover,
                 ),
               ),
             ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: kPadding80, right: kPadding80),
+            //   child: Container(
+            //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), border: Border.all(width: 0.5)),
+            //     child: Center(
+            //       child:
+            //     ),
+            //   ),
+            // ),
             const SizedBox(
               height: 25,
             ),
+            const Padding(
+                padding: EdgeInsets.all(kPadding8),
+                child: TawseelTextField(
+                  suffixIcon: Icons.lock_outline,
+                  prefixIcon: Icons.remove_red_eye,
+                  hintText: "كلمة المرور",
+                )),
             const Padding(
               padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                 suffixIcon: Icons.lock_outline,
                 prefixIcon: Icons.remove_red_eye,
-                hintText: "كلمة المرور",
-              )
-            ),
-            const Padding(
-              padding: EdgeInsets.all(kPadding8),
-              child: TawseelTextField(
-                  suffixIcon: Icons.lock_outline,
-                  prefixIcon: Icons.remove_red_eye,
-                  hintText: "تأكيد-كلمة المرور",
+                hintText: "تأكيد-كلمة المرور",
               ),
             ),
             const Padding(
@@ -83,7 +91,9 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                 ),
               ),
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

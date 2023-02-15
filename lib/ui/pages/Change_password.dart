@@ -27,48 +27,47 @@ class _ChangePasswordState extends State<ChangePassword> {
         alignment: Alignment.topRight,
         child: TawseelContainer(
           width: double.infinity,
+          padding: const EdgeInsets.all(kPadding12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: kPadding12),
               Text(
                 "الرقم السرى القديم",
                 style: TText.titleMedium.copyWith(color: TColors.blackText),
                 textDirection: TextDirection.rtl,
               ),
-              const Padding(
-                padding: EdgeInsets.all(kPadding8),
-                child: TawseelTextField(
-                  suffixIcon: Icons.remove_red_eye,
-                  inputType: TextInputType.visiblePassword,
-                   obsecureText: true,
-                ),
+              const SizedBox(height: kPadding12),
+              const TawseelTextField(
+                suffixIcon: Icons.remove_red_eye,
+                inputType: TextInputType.visiblePassword,
+                obsecureText: true,
               ),
+              const SizedBox(height: kPadding12),
               Text(
                 "الرقم السرى الجديد",
                 style: TText.titleMedium.copyWith(color: TColors.blackText),
                 textDirection: TextDirection.rtl,
               ),
-              const Padding(
-                padding: EdgeInsets.all(kPadding8),
-                child: TawseelTextField(
-                  suffixIcon: Icons.remove_red_eye,
-                  inputType: TextInputType.visiblePassword,
-                  obsecureText: true,
-                ),
+              const SizedBox(height: kPadding12),
+              const TawseelTextField(
+                suffixIcon: Icons.remove_red_eye,
+                inputType: TextInputType.visiblePassword,
+                obsecureText: true,
               ),
+              const SizedBox(height: kPadding12),
               Text(
                 "تأكيد الرقم السرى الجديد",
                 style: TText.titleMedium.copyWith(color: TColors.blackText),
                 textDirection: TextDirection.rtl,
               ),
-              const Padding(
-                padding: EdgeInsets.all(kPadding8),
-                child: TawseelTextField(
-                  suffixIcon: Icons.remove_red_eye,
-                  inputType: TextInputType.visiblePassword,
-                  obsecureText: true,
-                ),
+              const SizedBox(height: kPadding12),
+              const TawseelTextField(
+                suffixIcon: Icons.remove_red_eye,
+                inputType: TextInputType.visiblePassword,
+                obsecureText: true,
               ),
+              const SizedBox(height: kPadding20),
               const TawseelFilledButton(
                 text: "حفظ التغييرات",
                 color: TColors.success,

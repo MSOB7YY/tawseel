@@ -92,5 +92,4 @@ flutter:
         - asset: assets/fonts/Cairo-Regular.ttf
         - asset: assets/fonts/Cairo-Light.ttf
         - asset: assets/fonts/Cairo-ExtraLight.ttf
-  assets:
-      - assets/images/lock.png
+

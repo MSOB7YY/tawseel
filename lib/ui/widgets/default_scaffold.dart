@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/ui/pages/current_orders.dart';
 import 'package:tawseel/ui/pages/home_page.dart';
 import 'package:tawseel/ui/pages/new_order_page.dart';
 import 'package:tawseel/ui/pages/reset_password_page.dart';
@@ -58,8 +60,9 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               });
             },
             children: const [
-              NewOrderPage(),
               ResetPasswordPage(),
+              NewOrderPage(),
+              CurrentOrdersPage(),
               Homepage(),
             ],
           ),
@@ -73,6 +76,8 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               showSelectedLabels: false,
               showUnselectedLabels: false,
               currentIndex: _selectedIndex,
+              selectedItemColor: TColors.main,
+              unselectedItemColor: context.theme.iconTheme.color,
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: Icon(Icons.new_label),
@@ -80,6 +85,10 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.add_circle),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.calendar_month),
                   label: '',
                 ),
                 BottomNavigationBarItem(
