@@ -10,7 +10,12 @@ import 'package:tawseel/ui/widgets/default_scaffold.dart';
 
 import 'ui/pages/change_password.dart';
 import 'ui/pages/create_new_password.dart';
+import 'ui/pages/login_screen.dart';
 import 'ui/pages/new_login_screen.dart';
+import 'ui/pages/receive_benefits.dart';
+import 'ui/pages/receive_order.dart';
+import 'ui/pages/sending and receiving.dart';
+//import 'ui/pages/order_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,9 +33,8 @@ class MyApp extends StatelessWidget {
       theme: AppThemes.inst.getAppTheme(TColors.mainLight, light: true),
       darkTheme: AppThemes.inst.getAppTheme(TColors.mainDark, light: false),
       themeMode: Settings.inst.themeMode.value,
-      // home: const TawseelScaffold(),
-
-      home: const CreateNewPassword(),
+      // home: const ResetPasswordPage(),
+      home: const ReceivingOreder(),
     );
   }
 }
