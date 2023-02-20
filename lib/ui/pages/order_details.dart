@@ -8,7 +8,8 @@ import 'package:tawseel/ui/widgets/notification_icon.dart';
 import 'package:tawseel/ui/widgets/order_box.dart';
 
 class OrderDetails extends StatelessWidget {
-  const OrderDetails({super.key});
+  final TawseelOrderBox orderBox;
+  const OrderDetails({super.key, required this.orderBox});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +29,7 @@ class OrderDetails extends StatelessWidget {
       actions: const [TawseelNotificationIcon()],
       body: ListView(
         children: [
-          TawseelOrderBox(
-            order: Order(OrderState.onTheWay, 25613, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 40),
-          ),
+          orderBox,
           Row(
             children: [
               Container(

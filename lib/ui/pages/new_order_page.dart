@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tawseel/controllers/current_orders.dart';
 
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/bottomsheets/added_product.dart';
+import 'package:tawseel/ui/bottomsheets/choose_location.dart';
 import 'package:tawseel/ui/bottomsheets/verification_code.dart';
+import 'package:tawseel/ui/widgets/checkbox_list_tile.dart';
 import 'package:tawseel/ui/widgets/default_back_button.dart';
 import 'package:tawseel/ui/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
@@ -26,164 +30,198 @@ class NewOrderPage extends StatelessWidget {
           icon: const TawseelNotificationIcon(),
         ),
       ],
-      body: ListView(
-        children: [
-          Container(
-            color: TColors.card,
-            padding: const EdgeInsets.all(kPadding16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "المنـتجات",
-                      style: TText.displayLarge,
-                    ),
-                    TextButton(
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.add,
-                            color: TColors.mainLight,
-                          ),
-                          const SizedBox(
-                            width: kPadding4,
-                          ),
-                          Text(
-                            "إضافة منتح اخر",
-                            style: TText.displaySmall.copyWith(
+      body: Obx(
+        () => ListView(
+          children: [
+            Container(
+              color: TColors.card,
+              padding: const EdgeInsets.all(kPadding16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "المنـتجات",
+                        style: TText.displayLarge,
+                      ),
+                      TextButton(
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.add,
                               color: TColors.mainLight,
                             ),
-                          ),
-                        ],
-                      ),
-                      onPressed: () => null,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: kPadding16),
-                Text(
-                  "بيتزا شيش طاووق - حار",
-                  style: TText.displayLarge,
-                ),
-                const SizedBox(height: kPadding16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "السعر:",
-                      style: TText.displayMedium,
-                    ),
-                    Text(
-                      "250 ج.م",
-                      style: TText.displayMedium,
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    TextButton(
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.delete,
-                            color: TColors.error,
-                          ),
-                          const SizedBox(
-                            width: kPadding4,
-                          ),
-                          Text(
-                            "حذف",
-                            style: TText.displaySmall.copyWith(
-                              color: TColors.error,
+                            const SizedBox(
+                              width: kPadding4,
                             ),
-                          ),
-                        ],
-                      ),
-                      onPressed: () => null,
-                    ),
-                    TextButton(
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.edit,
-                            color: TColors.normal,
-                          ),
-                          const SizedBox(
-                            width: kPadding4,
-                          ),
-                          Text(
-                            "تعديل",
-                            style: TText.displaySmall.copyWith(
-                              color: TColors.normal,
+                            Text(
+                              "إضافة منتح اخر",
+                              style: TText.displaySmall.copyWith(
+                                color: TColors.mainLight,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        onPressed: () {
+                          CurrentOrders.inst.newOrderNameController.value.clear();
+                          CurrentOrders.inst.newOrderPriceController.value.clear();
+                          CurrentOrders.inst.showNewOrderContainer.value = true;
+                        },
                       ),
-                      onPressed: () => showVerificationCodeBottomSheet(),
+                    ],
+                  ),
+                  const SizedBox(height: kPadding16),
+                  ...CurrentOrders.inst.newOrders.entries
+                      .map(
+                        (e) => Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              e.key,
+                              style: TText.displayLarge,
+                            ),
+                            const SizedBox(height: kPadding16),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "السعر:",
+                                  style: TText.displayMedium,
+                                ),
+                                Text(
+                                  "${e.value} ج.م",
+                                  style: TText.displayMedium,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                TextButton(
+                                  child: Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.delete,
+                                        color: TColors.error,
+                                      ),
+                                      const SizedBox(
+                                        width: kPadding4,
+                                      ),
+                                      Text(
+                                        "حذف",
+                                        style: TText.displaySmall.copyWith(
+                                          color: TColors.error,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  onPressed: () => CurrentOrders.inst.newOrders.remove(e.key),
+                                ),
+                                TextButton(
+                                  child: Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.edit,
+                                        color: TColors.normal,
+                                      ),
+                                      const SizedBox(
+                                        width: kPadding4,
+                                      ),
+                                      Text(
+                                        "تعديل",
+                                        style: TText.displaySmall.copyWith(
+                                          color: TColors.normal,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  onPressed: () {
+                                    CurrentOrders.inst.showNewOrderContainer.value = true;
+                                    CurrentOrders.inst.newOrderNameController.value.text = e.key;
+                                    CurrentOrders.inst.newOrderPriceController.value.text = e.value.toString();
+                                  },
+                                ),
+                              ],
+                            ),
+                            const Divider(
+                              color: TColors.bg,
+                            ),
+                          ],
+                        ),
+                      )
+                      .toList(),
+                  if (CurrentOrders.inst.showNewOrderContainer.value) ...[
+                    TawseelTextField(
+                      hintText: 'اسم المنتج',
+                      controller: CurrentOrders.inst.newOrderNameController.value,
                     ),
-                  ],
-                ),
-                const Divider(
-                  color: TColors.bg,
-                ),
-                const TawseelTextField(
-                  hintText: 'اسم المنتج',
-                ),
-                const TawseelTextField(
-                  hintText: 'سعر المنتج',
-                  suffixText: 'ج.م',
-                ),
-                const SizedBox(
-                  height: kPadding16,
-                ),
-                TawseelFilledButton(
-                  color: TColors.success,
-                  text: 'إضافة',
-                  onTap: () => showAddedProductSuccessfullyBottomSheet(),
-                ),
-              ],
+                    TawseelTextField(
+                      hintText: 'سعر المنتج',
+                      suffixText: 'ج.م',
+                      controller: CurrentOrders.inst.newOrderPriceController.value,
+                      inputType: TextInputType.number,
+                    ),
+                    const SizedBox(
+                      height: kPadding16,
+                    ),
+                    TawseelFilledButton(
+                      color: TColors.success,
+                      text: 'إضافة',
+                      onTap: () {
+                        if (CurrentOrders.inst.newOrderNameController.value.text != '' && CurrentOrders.inst.newOrderPriceController.value.text != '') {
+                          CurrentOrders.inst.newOrders.addAll(
+                            {CurrentOrders.inst.newOrderNameController.value.text: int.parse(CurrentOrders.inst.newOrderPriceController.value.text)},
+                          );
+                          CurrentOrders.inst.newOrderNameController.value.clear();
+                          CurrentOrders.inst.newOrderPriceController.value.clear();
+                          CurrentOrders.inst.showNewOrderContainer.value = false;
+                        }
+                      },
+                    ),
+                  ]
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(kPadding16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "تفاصيل الطلب",
-                  style: TText.titleMedium,
-                ),
-                const SizedBox(
-                  height: kPadding8,
-                ),
-                const TawseelTextField(
-                  hintText: 'اسم العميل',
-                ),
-                const TawseelTextField(
-                  hintText: 'عنوان العميل',
-                  suffixIcon: Icons.map,
-                ),
-                const TawseelTextField(
-                  hintText: 'رقم العميل',
-                ),
-                const TawseelTextField(
-                  hintText: 'تكلفة التوصيل',
-                ),
-                const SizedBox(
-                  height: kPadding16,
-                ),
-                TawseelFilledButton(
-                  onTap: () => null,
-                  text: 'إضافة',
-                ),
-              ],
+            Container(
+              padding: const EdgeInsets.all(kPadding16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "تفاصيل الطلب",
+                    style: TText.titleMedium,
+                  ),
+                  const SizedBox(
+                    height: kPadding8,
+                  ),
+                  const TawseelTextField(
+                    hintText: 'اسم العميل',
+                  ),
+                  TawseelTextField(
+                    hintText: 'عنوان العميل',
+                    suffixIcon: Icons.map,
+                    onTap: () => showChooseLocationBottomSheet(),
+                  ),
+                  const TawseelTextField(
+                    hintText: 'رقم العميل',
+                  ),
+                  const TawseelTextField(
+                    hintText: 'تكلفة التوصيل',
+                  ),
+                  const SizedBox(
+                    height: kPadding16,
+                  ),
+                  TawseelFilledButton(
+                    onTap: () => showAddedProductSuccessfullyBottomSheet(),
+                    text: 'إرسال طلب',
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

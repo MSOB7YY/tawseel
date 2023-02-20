@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/ui/pages/login_page.dart';
 import 'package:tawseel/ui/widgets/default_back_button.dart';
 import 'package:tawseel/ui/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
 import 'package:tawseel/ui/widgets/textfield.dart';
 
-class NewLogin extends StatefulWidget {
-  const NewLogin({Key? key}) : super(key: key);
+class SignupPage extends StatelessWidget {
+  const SignupPage({Key? key}) : super(key: key);
 
-  @override
-  State<NewLogin> createState() => _NewLoginState();
-}
-
-class _NewLoginState extends State<NewLogin> {
   @override
   Widget build(BuildContext context) {
     return TawseelScaffold(
@@ -37,50 +34,60 @@ class _NewLoginState extends State<NewLogin> {
                 hintText: "رقم السجل الضريبى",
                 obsecureText: false,
               ),
-            ),const Padding(
+            ),
+            const Padding(
               padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                 hintText: "صورة السجل التجارى",
                 obsecureText: false,
                 suffixIcon: Icons.attach_file_rounded,
               ),
-            ),const Padding(
+            ),
+            const Padding(
               padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                 hintText: "رقم التفاعل",
                 obsecureText: false,
               ),
-            ),const Padding(
+            ),
+            const Padding(
               padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                 hintText: "البريد الألكترونى",
                 obsecureText: false,
                 suffixIcon: Icons.email,
               ),
-            ),const Padding(
+            ),
+            const Padding(
               padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                 hintText: "الرقم السري",
-                obsecureText: false,
+                obsecureText: true,
                 suffixIcon: Icons.remove_red_eye,
               ),
-            ),const Padding(
+            ),
+            const Padding(
               padding: EdgeInsets.all(kPadding8),
               child: TawseelTextField(
                 hintText: "تأكيد الرقم السري",
-                obsecureText: false,
+                obsecureText: true,
                 suffixIcon: Icons.remove_red_eye,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(kPadding8),
-              child: Row(
-                children: [
-                  IconButton(icon:const Icon(Icons.check_circle),onPressed: () { },),
-                  Text("حفظ البيانات",style: TText.titleMedium,),
-                ],
-              )
-            ),
+                padding: const EdgeInsets.all(kPadding8),
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.check_circle),
+                      onPressed: () {},
+                    ),
+                    Text(
+                      "حفظ البيانات",
+                      style: TText.titleMedium,
+                    ),
+                  ],
+                )),
             const Padding(
               padding: EdgeInsets.all(kPadding8),
               child: TawseelFilledButton(
@@ -90,8 +97,16 @@ class _NewLoginState extends State<NewLogin> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("الأنتقال الى ",style: TText.displaySmall,),
-                TextButton(onPressed: (){}, child: const Text("تسجيل دخول",))
+                Text(
+                  "الأنتقال الى ",
+                  style: TText.displaySmall,
+                ),
+                TextButton(
+                  onPressed: () => Get.off(() => const LoginPage()),
+                  child: const Text(
+                    "تسجيل دخول",
+                  ),
+                ),
               ],
             )
           ],

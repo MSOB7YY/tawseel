@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/ui/pages/change_password.dart';
 import 'package:tawseel/ui/widgets/default_container.dart';
 import 'package:tawseel/ui/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
@@ -95,6 +96,14 @@ class ProfilePage extends StatelessWidget {
                     TawseelFilledButton(
                       color: TColors.success,
                       text: 'حفظ التغييرات',
+                    ),
+                    SizedBox(
+                      height: kPadding24,
+                    ),
+                    TawseelFilledButton(
+                      color: TColors.error,
+                      text: 'تغيير كلمة المرور',
+                      onTap: () => Get.to(() => ChangePassword()),
                     ),
                     SizedBox(
                       height: kPadding24,

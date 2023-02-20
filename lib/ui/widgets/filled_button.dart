@@ -4,7 +4,7 @@ import 'package:tawseel/core/constants.dart';
 
 class TawseelFilledButton extends StatelessWidget {
   final void Function()? onTap;
-  final Color color;
+  final Color? color;
   final String text;
   final double? width;
   final Color? textColor;

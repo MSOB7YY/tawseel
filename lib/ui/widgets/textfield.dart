@@ -5,6 +5,7 @@ import 'package:tawseel/core/constants.dart';
 class TawseelTextField extends StatelessWidget {
   final TextEditingController? controller;
   final void Function(String)? onChanged;
+  final void Function()? onTap;
   final String? hintText;
   final String? suffixText;
   final IconData? suffixIcon;
@@ -13,12 +14,13 @@ class TawseelTextField extends StatelessWidget {
   final TextInputType? inputType;
   const TawseelTextField({
     super.key,
+    this.controller,
+    this.onChanged,
+    this.onTap,
     this.hintText,
     this.suffixText,
     this.suffixIcon,
     this.prefixIcon,
-    this.controller,
-    this.onChanged,
     this.obsecureText = false,
     this.inputType,
   });
@@ -32,6 +34,7 @@ class TawseelTextField extends StatelessWidget {
         obscureText: obsecureText,
         keyboardType: inputType,
         onChanged: onChanged,
+        onTap: onTap,
         controller: controller,
         style: TText.displaySmall,
         decoration: InputDecoration(

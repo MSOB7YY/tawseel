@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tawseel/class/order.dart';
 
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/enums.dart';
 import 'package:tawseel/core/extensions.dart';
+import 'package:tawseel/ui/pages/order_details.dart';
 import 'package:tawseel/ui/widgets/default_container.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
 
@@ -75,7 +77,9 @@ class TawseelOrderBox extends StatelessWidget {
           ),
           const SizedBox(height: kPadding24),
           TawseelFilledButton(
-            onTap: () => null,
+            onTap: () => Get.to(() => OrderDetails(
+                  orderBox: this,
+                )),
             color: TColors.bg,
             text: 'عرض التفاصيل',
             textColor: TColors.blackText,

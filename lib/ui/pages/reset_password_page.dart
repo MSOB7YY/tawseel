@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/ui/bottomsheets/verification_code.dart';
 import 'package:tawseel/ui/widgets/default_back_button.dart';
 import 'package:tawseel/ui/widgets/default_container.dart';
 import 'package:tawseel/ui/widgets/default_scaffold.dart';
@@ -75,8 +76,9 @@ class ResetPasswordPage extends StatelessWidget {
                   const SizedBox(
                     height: kPadding24,
                   ),
-                  const TawseelFilledButton(
+                  TawseelFilledButton(
                     text: 'إرسال',
+                    onTap: () => showVerificationCodeBottomSheet(),
                   ),
                   const SizedBox(
                     height: kPadding24 * 3,

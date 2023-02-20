@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/ui/pages/create_new_password.dart';
+import 'package:tawseel/ui/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
 
 void showVerificationCodeBottomSheet() {
@@ -70,6 +72,9 @@ void showVerificationCodeBottomSheet() {
                 hapticFeedbackType: HapticFeedbackType.lightImpact,
                 onCompleted: (pin) {
                   debugPrint('onCompleted: $pin');
+                  if (pin == '2222') {
+                    Get.to(() => const CreateNewPassword());
+                  }
                 },
                 onChanged: (value) {
                   debugPrint('onChanged: $value');

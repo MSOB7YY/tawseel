@@ -4,15 +4,11 @@ import 'package:tawseel/class/order.dart';
 
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/enums.dart';
-import 'package:tawseel/ui/bottomsheets/added_product.dart';
-import 'package:tawseel/ui/bottomsheets/verification_code.dart';
-import 'package:tawseel/ui/widgets/default_back_button.dart';
 import 'package:tawseel/ui/widgets/default_container.dart';
 import 'package:tawseel/ui/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/widgets/filled_button.dart';
 import 'package:tawseel/ui/widgets/notification_icon.dart';
 import 'package:tawseel/ui/widgets/order_box.dart';
-import 'package:tawseel/ui/widgets/textfield.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});

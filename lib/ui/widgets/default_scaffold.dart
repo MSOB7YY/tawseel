@@ -24,9 +24,9 @@ class TawseelScaffold extends StatefulWidget {
 }
 
 class _TawseelScaffoldState extends State<TawseelScaffold> {
-  final PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController = PageController(initialPage: 3);
 
-  int _selectedIndex = 2;
+  int _selectedIndex = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +72,7 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
       bottomNavigationBar: widget.body != null
           ? null
           : BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
               onTap: (value) {
                 _pageController.animateToPage(value, duration: const Duration(milliseconds: 400), curve: Curves.easeInOutQuart);
                 _selectedIndex = value;

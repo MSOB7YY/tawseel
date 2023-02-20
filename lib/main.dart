@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:tawseel/controllers/settings_controller.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/themes.dart';
-import 'package:tawseel/ui/pages/Screen3.dart';
 import 'package:tawseel/ui/pages/order_details.dart';
 import 'package:tawseel/ui/pages/profile_page.dart';
 import 'package:tawseel/ui/pages/new_order_page.dart';
@@ -14,8 +13,8 @@ import 'package:tawseel/ui/widgets/default_scaffold.dart';
 
 import 'ui/pages/change_password.dart';
 import 'ui/pages/create_new_password.dart';
-import 'ui/pages/login_screen.dart';
-import 'ui/pages/new_login_screen.dart';
+import 'ui/pages/login_page.dart';
+import 'ui/pages/signup_page.dart';
 //import 'ui/pages/order_details.dart';
 
 void main() {
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppThemes.inst.getAppTheme(TColors.mainDark, light: false),
       themeMode: Settings.inst.themeMode.value,
       // home: const OrderDetails(),
-      home: const Screen3(),
+      home: const OnBoardingPage(),
     );
   }
 }
